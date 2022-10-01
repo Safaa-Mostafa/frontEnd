@@ -1,0 +1,24 @@
+
+
+<div class="  m-auto mt-5 addProduct w-50">
+  <form #editImg="ngForm" [formGroup]="userInfo" class="mt-5 " (ngSubmit)="handleImage()">
+      <div class="mb-3">
+        <label for="email" class="form-label" >Name</label>
+        <input type="text" placeholder="username" formControlName="name" name="name" class="form-control" id="name"  required >
+
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputage" placeholder="age" class="form-label">Age</label>
+        <input type="text" class="form-control" formControlName="age" name="age" id="exampleInputage" required>
+      </div>
+      <div class="mb-3">
+       <label for="exampleInputemail" placeholder="email" class="form-label">Email</label>
+       <input type="email" class="form-control" formControlName="email" name="email" id="exampleInputemail" required>
+     </div>
+     <!-- <div class="mb-3">
+      <label for="exampleInputimg" placeholder="img" class="form-label">Upload Image</label>
+      <input type="file" class="form-control" formControlName="img" name="img" id="exampleInputimg" (change)="uploadImage($event)" required>
+    </div> -->
+      <button type="submit" class="btn-product d-flex m-auto">save</button>
+    </form>
+  </div>

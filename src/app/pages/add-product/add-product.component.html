@@ -1,0 +1,38 @@
+<div class="container w-50 mt-5 addProduct">
+<form #ngaddProduc="ngForm" (ngSubmit)="AddProductHandle(ngaddProduc)">
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input type="text" placeholder="Title" name="title" class="form-control" id="title" #title="ngModel" [(ngModel)]="ProductData.title" required>
+ <div class="alert alert-danger" *ngIf="ngaddProduc.submitted && title.invalid" >
+Title is required
+ </div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputdescription" placeholder="description" class="form-label">description</label>
+    <input type="text" class="form-control" name="description" id="exampleInputdescription" #description="ngModel" required [(ngModel)]="ProductData.description">
+    <div class="alert alert-danger" *ngIf="ngaddProduc.submitted && description.invalid" >
+      description is required
+       </div>
+  </div>
+
+  <select class="form-select" aria-label="Default select example" name="category_id"   [(ngModel)]="ProductData.categoryId">
+    <option selected>All</option>
+    <option  *ngFor="let category of categoryData" [value]="category._id">{{category.name}}</option>
+  </select>
+  <div class="mb-3">
+    <label for="exampleInputprice" placeholder="price" class="form-label">price</label>
+    <input type="text" class="form-control" name="price" #price="ngModel" [(ngModel)]="ProductData.price"id="exampleInputprice" required>
+    <div class="alert alert-danger" *ngIf="ngaddProduc.submitted && price.invalid">
+price is required
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputquantity" placeholder="quantity" class="form-label">quantity</label>
+    <input type="number" class="form-control" name="quantity" #quantity="ngModel" id="exampleInputquantity" required [(ngModel)]="ProductData.quantity">
+    <div class="alert alert-danger" *ngIf="ngaddProduc.submitted && quantity.invalid ">
+quantity is required
+    </div>
+  </div>
+  <button type="submit" class="btn-product d-flex m-auto">Submit</button>
+</form>
+</div>

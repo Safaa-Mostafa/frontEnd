@@ -1,0 +1,14 @@
+<div class="card col-8 mt-5 ms-5">
+
+
+  <div class="card col-3 m-3" style="width: 18rem;" *ngFor="let product of global.order.products">
+    <h3>{{product.title}}</h3>
+             <img src="{{global.urlPath}}{{product.img}}">
+             <p>{{product.description}}</p>
+             <p>${{product.price}}</p>
+             <p>${{product.quantity}} Items</p>
+             <p>total: ${{ product.price * product.quantity}}</p>
+            </div>
+
+      </div>
+

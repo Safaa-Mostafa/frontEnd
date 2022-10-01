@@ -1,0 +1,9 @@
+<div class="container w-25 mt-5 addProduct">
+  <form [formGroup]="newCategory"(ngSubmit)="handleEdit()">
+    <div class="mb-3">
+      <label for="name" class="form-label">Enter Category Name</label>
+      <input type="text" placeholder="CategoryName" name="name" class="form-control"  formControlName="name" id="name" required >
+    </div>
+    <button type="submit" class="btn-product d-flex m-auto">Save</button>
+  </form>
+  </div>

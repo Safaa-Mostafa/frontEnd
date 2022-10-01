@@ -1,0 +1,14 @@
+<div *ngIf="loadingImg ; else user">
+  <img src="assets/Loading_icon.gif" class=" mt-4 d-flex m-auto">
+</div>
+<ng-template #user>
+<div class="container w-25 mt-5 addProduct">
+  <div class="div">
+    <img src="{{global.urlPath}}{{userData.image}}" alt="" class="img">
+  <h2>{{userData.name}}</h2>
+  <p>Email  {{userData.email}}</p>
+  <p> Age {{userData.age}}</p>
+  <button class="btn btn-primary" routerLink="/edit/{{userData._id}}">Edit your info</button>
+</div>
+</div>
+</ng-template>

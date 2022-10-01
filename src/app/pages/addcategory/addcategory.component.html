@@ -1,0 +1,13 @@
+<div class="container w-25 mt-5 addProduct"  >
+  <form #ngaddCategory="ngForm" (ngSubmit)="AddCategoryHandle(ngaddCategory)">
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input type="text" placeholder="Title" name="title" class="form-control" id="title" #title="ngModel" [(ngModel)]="CategoryData.name" required>
+   <div class="alert alert-danger" *ngIf="ngaddCategory.submitted && title.invalid" >
+  Title is required
+   </div>
+    </div>
+
+    <button type="submit" class="btn-product d-flex m-auto">Submit</button>
+  </form>
+  </div>

@@ -1,0 +1,8 @@
+<div class="container">
+  <div class="row w-50 mt-5 addProduct">
+    <form action="" #uploadImage="ngForm" (ngSubmit)="handleSubmit()">
+      <input type="file" class="form-control my-3" (change)="handleUpload($event)">
+      <button class="btn btn-primary">upload image</button>
+    </form>
+  </div>
+</div>

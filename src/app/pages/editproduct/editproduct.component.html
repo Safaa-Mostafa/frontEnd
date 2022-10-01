@@ -1,0 +1,16 @@
+
+
+<div class="  m-auto mt-5 addProduct w-50">
+  <form #editImg="ngForm" [formGroup]="productInfo" class="mt-5 " (ngSubmit)="handleImage()">
+      <div class="mb-3">
+        <label for="title" class="form-label" >Title</label>
+        <input type="text" placeholder="Title" formControlName="title" name="title" class="form-control" id="title"  required >
+
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputage" placeholder="description" class="form-label">description</label>
+        <input type="text" class="form-control" formControlName="description" name="description" id="exampleInputage" required>
+      </div>
+      <button type="submit" class="btn-product d-flex m-auto">save</button>
+    </form>
+  </div>

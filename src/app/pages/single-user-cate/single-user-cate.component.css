@@ -1,0 +1,18 @@
+.cart{
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+padding:20px;
+}
+.btn{
+
+  padding:"20px";
+  color:aliceblue;
+  background-color:#133f32;
+
+
+}
+.btn:hover{
+  transition: 0.25s all;
+  background-color: #ebece4;
+  color:#1b3f27;
+  border-radius: 0px !important;
+}

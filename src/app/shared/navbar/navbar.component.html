@@ -1,0 +1,43 @@
+
+  <div class=" container-fluid navbar-dark color">
+    <nav class="navbar ps-4 navbar-dark justify-content-between">
+      <a class="navbar-brand" routerLink="/userPage">Make Order</a>
+      <ul class="navbar-nav navbar-dark d-flex flex-row">
+          <li class="nav-item ps-xs-1 p-2">
+            <!-- <a class="nav-link active " aria-current="page" routerLink="/products">All product</a> -->
+          </li>
+          <li class="nav-item ps-xs-1 p-2">
+            <a class="nav-link active " aria-current="page" routerLink="/category">All category</a>
+          </li>
+          <li class="nav-item ps-xs-1 p-2">
+            <a class="nav-link active " aria-current="page" routerLink="/users">All users</a>
+          </li>
+          <li class="nav-item ps-xs-1 p-2">
+            <a class="nav-link active " *ngIf="global.loginFlag" routerLink="/addProduct"  >Add Product</a>
+          </li>
+          <li class="nav-item ps-xs-1 p-2">
+            <a class="nav-link active " *ngIf="global.loginFlag" routerLink="/allProduct" >All Products</a>
+          </li>
+          <li class="nav-item ps-xs-1 p-2">
+            <a class="nav-link active " *ngIf="global.loginFlag" routerLink="/addCategory"  >Add Category</a>
+          </li>
+          <li class="nav-item ps-xs-1 p-2">
+              <a class="nav-link active" *ngIf="!global.loginFlag" routerLink="/Login">Login</a>
+            </li>
+
+            <li class="nav-item ps-xs-1 p-2">
+              <a class="nav-link active" *ngIf="global.loginFlag" routerLink="/profile">profile</a>
+            </li>
+
+            <li class="nav-item ps-xs-1 p-2">
+              <a class="nav-link active" *ngIf="!global.loginFlag" routerLink="/register">register</a>
+            </li>
+            <li class="nav-item ps-xs-1 p-2">
+              <a class="nav-link active" *ngIf="global.loginFlag" style="cursor:pointer" (click)="handleLogout()">Logout</a>
+            </li>
+
+      </ul>
+      <p class="navbar-nav ps-xs-1" >Welcome {{userInfo.name}}</p>
+
+    </nav>
+  </div>

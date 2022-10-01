@@ -1,0 +1,23 @@
+<div class="container w-25 mt-5 addProduct">
+  <div class="alert alert-danger" *ngIf="errMsg">
+    Email or password incorrect
+  </div>
+  <form #LoginForm="ngForm" (ngSubmit)="LoginHandle(LoginForm)">
+    <div class="mb-3">
+      <label for="email" class="form-label">email</label>
+      <input type="email" placeholder="example@.com" name="email" class="form-control" id="email" #email="ngModel" [(ngModel)]="Login.email" required email>
+   <div class="alert alert-danger" *ngIf="Login.submitted && email.invalid" >
+  email is required
+   </div>
+    </div>
+    <div class="mb-3">
+      <!-- templet ref # to use element-->
+      <label for="exampleInputpassword" placeholder="password" class="form-label">password</label>
+      <input type="text" class="form-control" name="password" id="exampleInputdescription" #password="ngModel" required [(ngModel)]="Login.password">
+      <div class="alert alert-danger" *ngIf="Login.submitted && password.invalid" >
+        password is required
+         </div>
+    </div>
+    <button type="submit" class="btn-product d-flex m-auto">Submit</button>
+  </form>
+  </div>

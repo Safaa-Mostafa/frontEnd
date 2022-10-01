@@ -1,0 +1,70 @@
+<div *ngIf="loadingImg ; else data">
+  <img src="assets/Loading_icon.gif" class=" mt-4 d-flex m-auto">
+</div>
+
+<ng-template #data>
+  <div class="card col-8 mt-5 ms-5">
+
+
+  <div class="row ms-3">
+    <div class="card col-3 m-3" style="width: 18rem;" *ngFor="let product of products  | paginate :
+    {
+      id:'productsPagination',
+    itemsPerPage : pageSize,
+    currentPage : P,
+    totalItems :total
+  } " >
+        <h3>{{product.title}}</h3>
+                 <img src="{{global.urlPath}}{{product.img}}">
+                 <p>{{product.description}}</p>
+                 <p>${{product.price}}</p>
+                 <input type="number" name="" #val id="">
+                 <!-- <input type="hidden" #id name="" value="{{product._id}}"> -->
+                 <!-- <input type="hidden" #userId value="{{userData._id}}"> -->
+                 <button  (click)="orderData(product,val)" >add</button>
+                </div>
+
+        </div>
+      </div>
+<button class="btn btn-primary d-flex justify-content-end" (click)="makeOrder()"  routerLink="/checkout">Checkout</button>
+    </ng-template>
+
+<pagination-controls  id="productsPagination" class="d-flex mt-4 justify-content-center"
+(pageChange)="pageChanged($event)"
+(pageBoundsCorrection)="pageChanged($event)"
+[maxSize]="9"
+[directionLinks]="true"
+[autoHide]="true"
+[responsive]="true"
+previousLabel="Previous"
+nextLabel="Next"
+screenReaderPaginationLabel="Pagination"
+screenReaderPageLabel="page"
+screenReaderCurrentLabel="You're on page">
+</pagination-controls>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
